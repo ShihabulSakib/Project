@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: 0.5s all;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #494949;
+    height: 100vh;
+}
+nav{
+    height: 70px;
+    width: 430px;
+    background: #fff;
+    border-radius: 15px;
+}
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  
+    width: 100%;
+    height: 100%;
+}
+nav ul .indicator{
+    height: 60px;
+    width: 60px;
+    background: #22c805;
+    border-radius: 50%;
+    position: absolute;
+    left: 29.82%;
+    top: 43.55%;
+    z-index: 1;
+    border: 7.5px solid #494949;
+}
+nav ul li:nth-child(2).active ~ .indicator{
+    left: calc(29.82% + 80px);
+}
+nav ul li:nth-child(3).active ~ .indicator{
+    left: calc(29.82% + (80px * 2));
+}
+nav ul li:nth-child(4).active ~ .indicator{
+    left: calc(29.82% + (80px * 3) + 5px);
+}
+nav ul li:nth-child(5).active ~ .indicator{
+    left: calc(29.82% + (80px * 4) + 5px);
+}
+nav ul .indicator::before{
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    top: 35.43px;
+    left: -14.38px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 2px;
+    border-top: 2.5px solid #494949;
+    border-right: 2.5px solid #494949;
+}
+nav ul .indicator::after{
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    top: 35.40px;
+    right: -14.38px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 2px;
+    border-top: 2.5px solid #494949;
+    border-left: 2.5px solid #494949;
+}
+nav ul .list-items{
+    list-style-type: none;
+    position: relative;
+    z-index: 2;
+    height: 50px;
+    width: 50px;
+}
+nav ul .list-items a{
+    text-decoration: none;
+    color: #4c4b4b;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+}
+nav ul .list-items a i{
+    font-size: 27px;
+    position: relative;
+    top: 10px;
+    color: #4e4e4e;
+}
+nav ul .active a i{
+    font-size: 27px;
+    position: relative;
+    top: -33px;
+    color: #4e4e4e;
+}
+nav ul .list-items a span{
+    opacity: 0;
+    transform: translateY(30px);
+}
+nav ul .active a span{
+    opacity: 1;
+    transform: translateY(0px);
+}
+nav ul .list-items:nth-child(5) a i,
+nav ul .list-items:nth-child(6) a i{
+    padding-left: 15px;
+}
+nav ul .list-items:nth-child(4) a i{
+    padding-left: 10px;
+}
